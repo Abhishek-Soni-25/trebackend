@@ -113,3 +113,27 @@ Returns the requested PDF file if found else returns an error.
     "error": "File not found"
 }
 ```
+
+---
+
+## Project setup
+```
+python -m pip install Django
+pip install djangorestframework
+pip install pillow
+```
+
+---
+
+### Run the migrations
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+---
+
+### Run django server
+```
+python manage.py runserver
+```
