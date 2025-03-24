@@ -26,6 +26,7 @@
 
 ### Fetch Course Details
 **Endpoint**: `GET /api/course_details`
+
 **Response**:
 ```json
 [
@@ -64,12 +65,14 @@
 
 ### Get a PDF File
 **Endpoint**: `POST /api/get_pdf`
+
 **Payload**:
 ```json
 {
     "pdf_link": "/media/pdfs/sample.pdf"
 }
 ```
+
 **Response**: 
 Returns the requested PDF file if found else returns an error.
 ```json
@@ -80,6 +83,7 @@ Returns the requested PDF file if found else returns an error.
 
 ### Fetch Course PYQs
 **Endpoint**: `GET /api/course_pyqs`
+
 **Response**:
 ```json
 {
@@ -95,12 +99,14 @@ Returns the requested PDF file if found else returns an error.
 
 ### Get a PYQ File
 **Endpoint**: `POST /api/get_pyq`
+
 **Payload**:
 ```json
 {
     "pdf_link": "/media/pyqs/sample_pyq.pdf"
 }
 ```
+
 **Response**: Returns the requested PDF file if found else returns an error.
 ```json
 {
