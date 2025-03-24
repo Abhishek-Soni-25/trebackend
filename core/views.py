@@ -37,5 +37,18 @@ def course_pyqs(request):
         pyqs = PYQ.objects.filter(course=course)
         file_paths = [pyq.file.url for pyq in pyqs]
         response_data[course.title] = file_paths
-
     return Response(response_data)
+
+@api_view(['POST'])
+def get_pyq(request):
+    relative_path = request.data.get('pdf_link') 
+
+    if not relative_path:
+        return Response({"error": "No PDF link provided"}, status=400)
+
+    file_path = os.path.join(settings.MEDIA_ROOT, relative_path.lstrip("/media/"))
+
+    if os.path.exists(file_path):
+        return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+    else:
+        return Response({"error": "File not found"}, status=404)
